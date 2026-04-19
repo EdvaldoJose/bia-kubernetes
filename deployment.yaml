@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bia-kubernetes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bia-kubernetes
+  template:
+    metadata:
+      labels:
+        app: bia-kubernetes
+    spec:
+      containers:
+      - name: bia-kubernetes
+        image: bia-kubernetes:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DB_HOST
+          value: postgres-service
+        - name: DB_PORT
+          value: "5432"
+        - name: DB_USER
+          value: bia
+        - name: DB_PWD
+          value: bia123
+        - name: DB_NAME
+          value: bia
