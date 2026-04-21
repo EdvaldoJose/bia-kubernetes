@@ -1269,3 +1269,144 @@ Quando voltar, só manda:
 👉 **“quero continuar do ponto onde parei”**
 
 e a gente evolui isso pra nível cloud real 😏
+
+
+Visualizando KUBERNETES em ação.
+==================================
+Perfeito — isso aqui é 
+**o teste clássico de que o Kubernetes tá funcionando de verdade**: 
+matar e ver ele ressuscitar sozinho.
+
+Sem enrolação 👇
+
+---
+
+# 🔥 1. Descobre o pod
+
+```bash
+kubectl get pods
+```
+
+Vai vir algo tipo:
+
+```bash
+bia-kubernetes-7f8c9d4f6b-abcde
+```
+
+---
+
+# 💥 2. Mata o pod
+
+```bash
+kubectl delete pod <NOME_DO_POD>
+```
+
+Exemplo:
+
+```bash
+kubectl delete pod bia-kubernetes-7f8c9d4f6b-abcde
+```
+
+---
+
+# 👀 3. Observa ele renascer
+
+```bash
+kubectl get pods -w
+```
+
+Você vai ver:
+
+```bash
+Terminating
+ContainerCreating
+Running
+```
+
+👉 Isso prova que o **Deployment tá gerenciando tudo**
+
+---
+
+# 🧠 O que está acontecendo
+
+* Você matou o pod ❌
+* O Deployment viu que ficou sem réplica
+* Criou outro automaticamente ✅
+
+👉 Isso é o coração do Kubernetes
+
+---
+
+# 🚀 4. Teste real (nível produção)
+
+Enquanto roda o watch:
+
+```bash
+kubectl get pods -w
+```
+
+Abre outro terminal e faz:
+
+```bash
+curl http://bia.local:30008
+```
+
+👉 Mesmo durante restart, deve voltar sozinho
+
+---
+
+# 💥 Teste hardcore (recomendado)
+
+Mata várias vezes:
+
+```bash
+kubectl delete pod -l app=bia-kubernetes
+```
+
+👉 Ele recria todos
+
+---
+
+# 🔥 Teste ainda mais raiz
+
+Escala pra 2 pods:
+
+```bash
+kubectl scale deployment bia-kubernetes --replicas=2
+```
+
+Depois:
+
+```bash
+kubectl get pods
+```
+
+👉 Agora mata um:
+
+```bash
+kubectl delete pod <um_deles>
+```
+
+👉 O outro continua atendendo (zero downtime)
+
+---
+
+# 🧠 Insight DevOps
+
+Se isso funciona:
+
+* auto-healing ✅
+* desired state ✅
+* controller loop ✅
+
+👉 você já saiu do nível “docker rodando app”
+👉 e entrou no nível **orquestração real**
+
+---
+
+Se quiser, próximo passo eu te mostro:
+
+* rolling update (deploy sem downtime)
+* ou simular falha de app (crash) pra ver restart automático
+
+Aí começa a ficar coisa de produção mesmo.
