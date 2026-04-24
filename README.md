@@ -2,6 +2,7 @@
 🚀 Em apenas 3 dias, os números explodiram:  
 📈 Views: 40 → 128 | Impressões: 400 → 11.949  
 💡 Um lembrete de que consistência e conteúdo técnico de qualidade encontram seu público certo.  
+
 📌 Projeto Bia-Kubernetes  
 ✅ 3 dias após a publicação...  
 👀 Impressões: 400 → 11.949  
