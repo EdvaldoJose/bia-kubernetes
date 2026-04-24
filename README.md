@@ -1,3 +1,17 @@
-#### 📌 Esse Projeto Bia-kubernetes quando fiz o Post no linkedIn em 3 dias sair 
-#### 👉 De 40 views - 400 impressions
-#### 🚀 Para 128 views - 11.949 impressions.
+📌 Quando publiquei o projeto Bia-Kubernetes, não imaginei a repercussão.
+
+Em apenas 3 dias, os números explodiram:
+
+🚀 De 40 para 128 views
+📈 De 400 para 11.949 impressões
+
+Um lembrete de que consistência e conteúdo técnico de qualidade encontram seu público certo.
+
+📌 Projeto Bia-Kubernetes
+
+✅ 3 dias após a publicação...
+
+👀 Impressões: 400 → 11.949
+👥 Visualizações: 40 → 128
+
+De um alcance modesto a quase 12 mil pessoas impactadas.
